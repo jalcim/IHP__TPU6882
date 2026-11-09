@@ -5,11 +5,11 @@ Submission for the IHP Open-Silicon MPW run of November 2026 (SG13CMOS5L), chip 
 ## Files
 
 - gds/TPU6882.gds.gz, single top cell TPU6882
-  - cell names specific to this version: pad_in_M3_QN (input stage, QN variant), sealring_TPU6882 (seal ring) and lvcmosIO_SecondaryProtection
+  - cell names specific to this version: pad_in_M3_QN (input stage, QN variant), sealring (seal ring, renamed back from sealring_TPU6882 so that the IHP size check finds it) and lvcmosIO_SecondaryProtection
     (secondary protection of the lvcmos_io input pads, which differs from sg13cmos5l_SecondaryProtection of the IHP IO library).
     These cells were renamed in the GDS records only; the geometry is unchanged.
-  - SHA-256 of TPU6882.gds: 6f2e6ec16ad4588549ae439cb19d617e4e515fa3ac0ac9238fc4e5c2ecfe3264
-  - SHA-256 of TPU6882.gds.gz: 755fc8b2503785b75ce7bb0af0e09fa7b64f0d235700bf23a7672491019649d1
+  - SHA-256 of TPU6882.gds: 33b410a5d40e3f85852d20c1994312c83f8e7cbb6c2079214174af05fb3478e4
+  - SHA-256 of TPU6882.gds.gz: 7279f8e5591e75d6b2388285520ed46cebcd4f3b74c47d685ca81e3a37e59f08
 
 ## Checks
 

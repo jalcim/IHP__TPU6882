@@ -33,7 +33,7 @@ The core and its macros are the same in both versions.
 
 A pad wrapper is the lvcmos cell plus a Metal2 bridge that brings the lvcmos pin to the pin location of the former IHP pad cell.
 
-Cell names: the input stage is named pad_in_M3_QN, the seal ring sealring_TPU6882 and the secondary protection of the lvcmos input pads
+Cell names: the input stage is named pad_in_M3_QN, the seal ring sealring and the secondary protection of the lvcmos input pads
 lvcmosIO_SecondaryProtection, so that none of them shares a name with a different cell of the previous version or of the IHP IO library.
 
 ## Contents

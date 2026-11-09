@@ -10,3 +10,7 @@ Checks: main and density
 Result: 0 violations (KLayout DRC Check Passed), 0 items in TPU6882_minimum_drc.lyrdb
 Run time: 189.75 s
 Logs: TPU6882_drc_run.log (run summary), TPU6882_TPU6882_density.log (density checks)
+
+The precheck above was run on the GDS whose SHA-256 is 6f2e6ec16ad4588549ae439cb19d617e4e515fa3ac0ac9238fc4e5c2ecfe3264.
+The released GDS (SHA-256 33b410a5d40e3f85852d20c1994312c83f8e7cbb6c2079214174af05fb3478e4) differs from it only by the name of the seal ring cell, sealring_TPU6882 renamed to sealring.
+The rename was checked by renaming back, which gives the checked GDS byte for byte.
