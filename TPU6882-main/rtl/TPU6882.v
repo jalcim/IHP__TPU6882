@@ -1,5 +1,4 @@
-// CHIP_816W64_V2 -- ECRIT par phys/assemblage/blocs/chip_v2.py : top de la puce 8-1-6 W64 v2, corps de
-// origin/puce7r:rtl/12_chip_top.v (memes ports, memes plots, memes noms d'instances), u_tile = coeur v2 + 37 pad_in.
+// TPU6882 : top de la puce 8-1-6 W64 v2, u_tile = coeur v2 + 37 pad_in.
 `define TILE_W 64
 `define TILE_BPP 2
 `define TILE_OUT_W 8

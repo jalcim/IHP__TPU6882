@@ -1,6 +1,6 @@
 `ifndef __POIDS_ELEMENT__
 `define __POIDS_ELEMENT__
-/* poids_element : l'element POIDS_1_5_6 du dessin de Lionel en latches (modele de simulation des IP de 5, ecrit par
+/* poids_element : l'element POIDS_1_5_6 du dessin en latches (modele de simulation des IP de 5, ecrit par
  * blocs/weight_bank) : chargeur 1, chaine G - 1, anneau G, mux d'entree de l'anneau. Lignes : _lm = maitre, _ls = esclave. */
 module poids_element #(parameter G = 6)
                       (input  i_wgt_cache_data,

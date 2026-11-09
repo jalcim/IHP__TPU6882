@@ -18,15 +18,9 @@ Tensor processing chip from Nebula Microsystems, submitted to the IHP Open-Silic
 - TPU6882-main/rtl/TPU6882.v: structural Verilog of the top level
 - dependencies: GDS of each macro, taken from the final GDS, with the LEF, Liberty and Verilog views available
 - dependencies/coeur_v2/coeur_v2-main/rtl: Verilog of the blocks inside coeur_v2
+- release/v.1.0.0/doc/drc: IHP minimum DRC precheck of the released GDS (precheck.txt and lyrdb report)
 
 The netlist used for LVS and the flow configuration will be added later.
-
-## Verification status
-
-- IHP minimum DRC precheck (run_drc.py --minimum_drc, main and density checks): 0 violations.
-  It ran on the original GDS (md5 72714421dc98cc4a6ae822968c7e7c03), whose top cell is named CHIP_816W64_V2.
-  The released file differs from it only by the top cell name, TPU6882.
-  Reports are in release/v.1.0.0/doc/drc.
 
 ## License
 

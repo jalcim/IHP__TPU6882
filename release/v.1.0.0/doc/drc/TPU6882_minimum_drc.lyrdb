@@ -3,7 +3,7 @@
  <description>Main DRC Run Report at</description>
  <original-file />
  <generator>drc: script='/opt/nebula-eda/IHP-Open-PDK/ihp-sg13cmos5l/libs.tech/klayout/tech/drc/ihp-sg13cmos5l.drc'</generator>
- <top-cell>CHIP_816W64_V2</top-cell>
+ <top-cell>TPU6882</top-cell>
  <tags>
  </tags>
  <categories>
@@ -442,7 +442,7 @@
  </categories>
  <cells>
   <cell>
-   <name>CHIP_816W64_V2</name>
+   <name>TPU6882</name>
    <variant />
    <layout-name />
    <references>

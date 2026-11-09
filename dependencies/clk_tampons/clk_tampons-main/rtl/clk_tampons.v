@@ -1,5 +1,5 @@
 // clk_tampons : 4 buf_16 (deux entrees, deux sorties chacune) pour la distribution d'horloge des 37 pad_in de la
-// 8-1-6 W64 v2 (option C du coordinateur, 08/11 soir) : i_a -> o_a0, o_a1 (CLK_P) ; i_b -> o_b0, o_b1 (CLK_N).
+// 8-1-6 W64 v2 : i_a -> o_a0, o_a1 (CLK_P) ; i_b -> o_b0, o_b1 (CLK_N).
 // Une instance au depart (couronne nord, derriere g_IOVDD[1] / g_IOVSS[1]) et une a chaque point d'alimentation (est, ouest).
 `default_nettype none
 module clk_tampons (

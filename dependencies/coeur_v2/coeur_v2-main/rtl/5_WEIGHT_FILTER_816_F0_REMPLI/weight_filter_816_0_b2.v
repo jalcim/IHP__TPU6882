@@ -2,7 +2,7 @@
 `define __WEIGHT_FILTER_816_0_B2__
 `include "poids_element.v"
 `include "poids_case.v"
-/* weight_filter_816_0_b2 : IP du filtre 0 de l'accord 816 (convention de Lionel), ecrite par blocs/weight_bank/pile_5.py.
+/* weight_filter_816_0_b2 : IP du filtre 0 de l'accord 816, ecrite par blocs/weight_bank/pile_5.py.
  * Mots RTL F0_MOT_DEBUT (ouest) .. F0_MOT_FIN (est, s = 0). Pistes : i_wgt_cache_data / o_loader[8 j + e] = bit 8 j + e
  * du mot (rangee j, element e). o_wgt_head[i] = bit 0 FILTRE_BITS + i du groupe. Bourrage : case.
  * Dessin (B12) : un sg13cmos5l_buf_8 repete chaque tete (o_wgt_head = r_s[0] de l'element, fonction inchangee). */
