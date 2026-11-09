@@ -98,7 +98,7 @@
   "tools": {
     "pnr": "OpenROAD",
     "flow": "LibreLane",
-    "drc": "KLayout"
+    "drc": "KLayout 0.30.12"
   },
   "top_cell_name": "TPU6882",
   "release": {

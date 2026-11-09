@@ -10,7 +10,9 @@ First submission for the IHP Open-Silicon MPW run of November 2026 (SG13CMOS5L).
 
 ## Checks
 
-- IHP minimum DRC precheck of the released GDS, main and density checks: 0 violations, see doc/drc/precheck.txt
+- IHP minimum DRC precheck of the released GDS, main and density checks: 0 violations, see doc/drc/precheck.txt.
+  The run log and the density log are in doc/drc/ as well.
+- The full DRC deck (run_drc.py without --minimum_drc) has not been run on the released GDS yet.
 
 ## Seal ring text
 
