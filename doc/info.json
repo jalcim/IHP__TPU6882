@@ -79,10 +79,16 @@
         }
       }
     },
-    "pad_in_M3": {
+    "pad_in_M3_QN": {
       "dependencies": {}
     },
     "clk_tampons": {
+      "dependencies": {}
+    },
+    "clk_tampons_inv": {
+      "dependencies": {}
+    },
+    "clk_tampons_mix": {
       "dependencies": {}
     },
     "bondpad_70x70_5L": {
@@ -92,6 +98,21 @@
       "dependencies": {}
     },
     "decapd55_8": {
+      "dependencies": {}
+    },
+    "lvcmos_io": {
+      "dependencies": {}
+    },
+    "puce3_IOPadIn18NH_pont": {
+      "dependencies": {}
+    },
+    "puce3_IOPadIn18_pont": {
+      "dependencies": {}
+    },
+    "puce3_IOPadIn18_noninv": {
+      "dependencies": {}
+    },
+    "puce3_IOPadOut18_pont": {
       "dependencies": {}
     }
   },

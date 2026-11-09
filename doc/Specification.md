@@ -25,6 +25,6 @@ RST_N_PAD is an active low reset.
 
 ## Implementation
 
-- Process IHP SG13CMOS5L, IO cells from the sg13cmos5l IO library.
-- Macros: coeur_v2, pad_in_M3, clk_tampons, bondpad_70x70_5L, decapd55_8 and logo_nebula.
+- Process IHP SG13CMOS5L, IO cells from the Nebula Microsystems lvcmos_io library, IO supply 1.8 V.
+- Macros: coeur_v2, pad_in_M3_QN, clk_tampons, clk_tampons_inv, clk_tampons_mix, the pad wrappers puce3_IOPadIn18NH_pont, puce3_IOPadIn18_pont, puce3_IOPadIn18_noninv and puce3_IOPadOut18_pont, bondpad_70x70_5L, decapd55_8 and logo_nebula.
 - Die 2331 x 2426 um (5.66 mm2), with seal ring and metal fill.

@@ -1,0 +1,76 @@
+* NGSPICE file created from clk_tampons_inv.ext - technology: ihp-sg13cmos5l
+
+* Black-box entry subcircuit for sg13cmos5l_decap_8 abstract view
+.subckt sg13cmos5l_decap_8 VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13cmos5l_fill_2 abstract view
+.subckt sg13cmos5l_fill_2 VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13cmos5l_fill_1 abstract view
+.subckt sg13cmos5l_fill_1 VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13cmos5l_decap_4 abstract view
+.subckt sg13cmos5l_decap_4 VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13cmos5l_inv_4 abstract view
+.subckt sg13cmos5l_inv_4 Y A VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13cmos5l_buf_16 abstract view
+.subckt sg13cmos5l_buf_16 X A VDD VSS
+.ends
+
+.subckt clk_tampons_inv VDD VSS i_a i_b o_a0 o_a1 o_b0 o_b1
+XFILLER_3_56 VDD VSS sg13cmos5l_decap_8
+XFILLER_3_35 VDD VSS sg13cmos5l_decap_8
+XFILLER_3_14 VDD VSS sg13cmos5l_decap_8
+XFILLER_0_48 VDD VSS sg13cmos5l_fill_2
+XFILLER_1_0 VDD VSS sg13cmos5l_decap_8
+XFILLER_3_49 VDD VSS sg13cmos5l_decap_8
+XFILLER_3_28 VDD VSS sg13cmos5l_decap_8
+XFILLER_3_7 VDD VSS sg13cmos5l_decap_8
+XFILLER_1_83 VDD VSS sg13cmos5l_fill_1
+XFILLER_1_72 VDD VSS sg13cmos5l_decap_8
+XFILLER_1_40 VDD VSS sg13cmos5l_decap_8
+XFILLER_1_65 VDD VSS sg13cmos5l_decap_8
+XFILLER_1_54 VDD VSS sg13cmos5l_decap_4
+XFILLER_1_7 VDD VSS sg13cmos5l_decap_8
+XFILLER_1_33 VDD VSS sg13cmos5l_decap_8
+XFILLER_1_79 VDD VSS sg13cmos5l_decap_4
+Xu_bn u_bn/Y i_b VDD VSS sg13cmos5l_inv_4
+XFILLER_1_58 VDD VSS sg13cmos5l_fill_1
+XFILLER_1_47 VDD VSS sg13cmos5l_decap_8
+Xu_an u_an/Y i_a VDD VSS sg13cmos5l_inv_4
+XFILLER_1_14 VDD VSS sg13cmos5l_decap_4
+XFILLER_1_26 VDD VSS sg13cmos5l_decap_8
+XFILLER_2_83 VDD VSS sg13cmos5l_fill_1
+XFILLER_2_72 VDD VSS sg13cmos5l_decap_8
+XFILLER_1_18 VDD VSS sg13cmos5l_fill_2
+XFILLER_2_0 VDD VSS sg13cmos5l_fill_2
+XFILLER_2_65 VDD VSS sg13cmos5l_decap_8
+XFILLER_0_0 VDD VSS sg13cmos5l_decap_8
+Xu_b0 o_b0 u_bn/Y VDD VSS sg13cmos5l_buf_16
+XFILLER_2_34 VDD VSS sg13cmos5l_decap_4
+Xu_a0 o_a0 u_an/Y VDD VSS sg13cmos5l_buf_16
+Xu_b1 o_b1 u_bn/Y VDD VSS sg13cmos5l_buf_16
+XFILLER_2_79 VDD VSS sg13cmos5l_decap_4
+Xu_a1 o_a1 u_an/Y VDD VSS sg13cmos5l_buf_16
+XFILLER_2_38 VDD VSS sg13cmos5l_fill_2
+XFILLER_2_27 VDD VSS sg13cmos5l_decap_8
+XFILLER_3_70 VDD VSS sg13cmos5l_decap_8
+XFILLER_0_82 VDD VSS sg13cmos5l_fill_2
+XFILLER_0_7 VDD VSS sg13cmos5l_fill_2
+XFILLER_0_41 VDD VSS sg13cmos5l_decap_8
+XFILLER_3_63 VDD VSS sg13cmos5l_decap_8
+XFILLER_0_75 VDD VSS sg13cmos5l_decap_8
+XFILLER_3_42 VDD VSS sg13cmos5l_decap_8
+XFILLER_3_21 VDD VSS sg13cmos5l_decap_8
+XFILLER_3_77 VDD VSS sg13cmos5l_decap_8
+XFILLER_3_0 VDD VSS sg13cmos5l_decap_8
+XFILLER_0_34 VDD VSS sg13cmos5l_decap_8
+.ends
+

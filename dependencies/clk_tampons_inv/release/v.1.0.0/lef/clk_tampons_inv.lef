@@ -1,0 +1,142 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO clk_tampons_inv
+  CLASS BLOCK ;
+  FOREIGN clk_tampons_inv ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 40.320 BY 22.680 ;
+  PIN VDD
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER Metal1 ;
+        RECT 0.000 7.340 40.320 7.780 ;
+    END
+    PORT
+      LAYER Metal1 ;
+        RECT 0.000 14.900 40.320 15.340 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 5.600 0.000 6.400 22.680 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 17.600 0.000 18.400 22.680 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 29.600 0.000 30.400 22.680 ;
+    END
+  END VDD
+  PIN VSS
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER Metal1 ;
+        RECT 0.000 3.560 40.320 4.000 ;
+    END
+    PORT
+      LAYER Metal1 ;
+        RECT 0.000 11.120 40.320 11.560 ;
+    END
+    PORT
+      LAYER Metal1 ;
+        RECT 0.000 18.680 40.320 19.120 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 2.000 0.000 2.800 22.680 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 14.000 0.000 14.800 22.680 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 26.000 0.000 26.800 22.680 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 38.000 0.000 38.800 22.680 ;
+    END
+  END VSS
+  PIN i_a
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.967200 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 8.300 0.000 8.500 0.800 ;
+    END
+  END i_a
+  PIN i_b
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.967200 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 28.460 0.000 28.660 0.800 ;
+    END
+  END i_b
+  PIN o_a0
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 5.654400 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 3.260 0.000 3.460 0.800 ;
+    END
+  END o_a0
+  PIN o_a1
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 5.654400 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 13.340 0.000 13.540 0.800 ;
+    END
+  END o_a1
+  PIN o_b0
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 5.654400 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 23.420 0.000 23.620 0.800 ;
+    END
+  END o_b0
+  PIN o_b1
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 5.654400 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 33.500 0.000 33.700 0.800 ;
+    END
+  END o_b1
+  OBS
+      LAYER GatPoly ;
+        RECT 0.000 3.630 40.320 19.050 ;
+      LAYER Metal1 ;
+        RECT 0.175 15.520 40.165 18.500 ;
+        RECT 0.175 11.740 40.165 14.720 ;
+        RECT 0.175 7.960 40.165 10.940 ;
+        RECT 0.175 4.180 40.165 7.160 ;
+      LAYER Metal2 ;
+        RECT 2.095 0.275 38.705 19.045 ;
+      LAYER Metal3 ;
+        RECT 2.040 1.010 38.760 19.000 ;
+        RECT 2.040 0.320 3.050 1.010 ;
+        RECT 3.670 0.320 8.090 1.010 ;
+        RECT 8.710 0.320 13.130 1.010 ;
+        RECT 13.750 0.320 23.210 1.010 ;
+        RECT 23.830 0.320 28.250 1.010 ;
+        RECT 28.870 0.320 33.290 1.010 ;
+        RECT 33.910 0.320 38.760 1.010 ;
+  END
+END clk_tampons_inv
+END LIBRARY
+

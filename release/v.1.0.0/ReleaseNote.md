@@ -1,18 +1,20 @@
 # Release v.1.0.0
 
-First submission for the IHP Open-Silicon MPW run of November 2026 (SG13CMOS5L).
+Submission for the IHP Open-Silicon MPW run of November 2026 (SG13CMOS5L), chip version 2e-1a: LVCMOS 1.8 V pad ring (lvcmos_io library), same core as the previous version (tag 2d-R-backup-2026-11-09).
 
 ## Files
 
 - gds/TPU6882.gds.gz, single top cell TPU6882
-  - SHA-256 of TPU6882.gds: 819aa305f8c76f744068a4e42b86727e6775f779ccf131bbbfada38854405915
-  - SHA-256 of TPU6882.gds.gz: c5b13ab2bfd83c308346b6820d7aca68934abf27a43add54c14cefb3ea56214d
+  - cell names specific to this version: pad_in_M3_QN (input stage, QN variant) and sealring_TPU6882 (seal ring)
+  - SHA-256 of TPU6882.gds: 7506ccd5283194f7b1a4b83d4e8a23e7200f4778f07409857c7fd61bf05518d0
+  - SHA-256 of TPU6882.gds.gz: 33d4213f4a1672ee59903bc8e849ed58a1056f8a1822775e194727f5abc9b9ed
 
 ## Checks
 
 - IHP minimum DRC precheck of the released GDS, main and density checks: 0 violations, see doc/drc/precheck.txt.
-  The run log and the density log are in doc/drc/ as well.
+  The run summary and the density log are in doc/drc/ as well.
 - The full DRC deck (run_drc.py without --minimum_drc) has not been run on the released GDS yet.
+  On the same layout before the cell renaming, the full deck reports markers inside the lvcmos_io cells and at their abutment only; none of them belongs to the minimum rule set.
 
 ## Seal ring text
 

@@ -1,0 +1,22 @@
+{
+  "name": "puce3_IOPadIn18_pont",
+  "design_type": "D",
+  "technology": "IHP",
+  "unique_id": "6882",
+  "license": "Apache-2.0",
+  "trl": 0,
+  "sealring_x": 1.0,
+  "sealring_y": 1.0,
+  "repository": "",
+  "pdk_version": "7bbb4b5a5b64c446fedc64eacadc33fa65ade276",
+  "process": "SG13CMOS5L",
+  "dependencies": {},
+  "tools": {},
+  "top_cell_name": "puce3_IOPadIn18_pont",
+  "release": {
+    "version": "v.1.0.0",
+    "gds": "release/v.1.0.0/gds",
+    "netlist": "release/v.1.0.0/netlist",
+    "doc": "release/v.1.0.0/doc"
+  }
+}

@@ -1,0 +1,791 @@
+/* lvcmos_io_ff_bcs_m40 : bibliotheque de plots LVCMOS 1,2 V et 1,8 V (CMOS/LVCMOS_IO), corner ff_bcs_m40.
+   Ecrit par lib/merge_lib.tcl le 2026-10-21 -- ne pas editer, relancer make lib.
+   Plots signaux (lvcmos_IOPadIn12, lvcmos_IOPadOut12, lvcmos_IOPadIn18, lvcmos_IOPadOut18, lvcmos_IOPadIn18NH) : Liberty vernier (espece sngl_endedIO : tp, cin, op, netlist schematique
+   avec diodes de plot et clamps, sans parasites de layout), cellules et broches renommees comme le dessin
+   (IN/A -> PAD/C2P, VDDIO -> IOVDD, VSSIO -> IOVSS), aire de la lib factice (dessin).
+   Rails : VDD 1.32 V, IOVDD12 1.32 V, IOVDD18 1.95 V (IOVDD : cadre, 1.95 V). Autres cellules : lib factice (sans timing). */
+
+library (lvcmos_io_ff_bcs_m40){
+  voltage_map (VDD, 1.32);
+  voltage_map (VSS, 0);
+  voltage_map (IOVDD, 1.95);
+  voltage_map (IOVDD12, 1.32);
+  voltage_map (IOVDD18, 1.95);
+  voltage_map (IOVSS, 0);
+  technology : cmos ;
+  delay_model : table_lookup ;
+  bus_naming_style : "%s[%d]" ;
+  time_unit : "1ns" ;
+  voltage_unit : "1V" ;
+  leakage_power_unit : "1nW" ;
+  current_unit : "1uA" ;
+  pulling_resistance_unit : "1Ohm" ;
+  capacitive_load_unit (1, pF);
+  default_input_pin_cap : 0.001 ;
+  default_inout_pin_cap : 0.001 ;
+  default_output_pin_cap : 0 ;
+  nom_process : 1.00 ;
+  nom_voltage : 1.32 ;
+  nom_temperature : -40 ;
+  slew_upper_threshold_pct_rise : 90.00 ;
+  slew_lower_threshold_pct_rise : 10.00 ;
+  slew_upper_threshold_pct_fall : 90.00 ;
+  slew_lower_threshold_pct_fall : 10.00 ;
+  input_threshold_pct_rise : 50.00 ;
+  input_threshold_pct_fall : 50.00 ;
+  output_threshold_pct_rise : 50.00 ;
+  output_threshold_pct_fall : 50.00 ;
+  operating_conditions (typical) {
+    process : 1.00 ;
+    voltage : 1.32 ;
+    temperature : -40 ;
+  } /* end operating_conditions */
+  lu_table_template (delay_template_3x3) {
+    variable_1 : total_output_net_capacitance ;
+    variable_2 : input_net_transition ;
+    index_1 ("1.0, 2.0, 3.0");
+    index_2 ("1.0, 2.0, 3.0");
+  } /* end lu_table_template */
+  cell (lvcmos_IOPadIn12) {
+    area : 14400 ;
+    pad_cell : true ;
+    pin (PAD) {
+      direction : input ;
+      is_pad : true ;
+      related_power_pin : IOVDD;
+      related_ground_pin : IOVSS;
+      fall_capacitance : 1.433613 ;
+      fall_capacitance_range (1.43339, 1.43377);
+      rise_capacitance : 1.433733 ;
+      rise_capacitance_range (1.43314, 1.43419);
+      capacitance : 1.433673 ;
+    } /* end pin */
+    pin (P2C) {
+      direction : output ;
+      related_power_pin : VDD;
+      related_ground_pin : VSS;
+      max_capacitance : 0.240000 ;
+      function : PAD ;
+      timing () {
+        related_pin : PAD ;
+        timing_sense : positive_unate ;
+        timing_type : combinational ;
+        cell_fall (delay_template_3x3) {
+          index_1 ("0.024000, 0.096000, 0.240000") ;
+          index_2 ("0.050000, 0.200000, 0.800000") ;
+          values ( \
+            "0.105203, 0.163605, 0.311911" \
+            "0.182108, 0.241531, 0.391146" \
+            "0.334459, 0.393939, 0.545160" \
+          ) ;
+        } /* end cell_fall */
+        cell_rise (delay_template_3x3) {
+          index_1 ("0.024000, 0.096000, 0.240000") ;
+          index_2 ("0.050000, 0.200000, 0.800000") ;
+          values ( \
+            "0.149543, 0.230644, 0.492739" \
+            "0.290754, 0.371881, 0.634846" \
+            "0.571668, 0.652915, 0.916272" \
+          ) ;
+        } /* end cell_rise */
+        fall_transition (delay_template_3x3) {
+          index_1 ("0.024000, 0.096000, 0.240000") ;
+          index_2 ("0.050000, 0.200000, 0.800000") ;
+          values ( \
+            "0.041252, 0.043317, 0.046255" \
+            "0.145285, 0.145708, 0.148091" \
+            "0.356810, 0.356812, 0.360004" \
+          ) ;
+        } /* end fall_transition */
+        rise_transition (delay_template_3x3) {
+          index_1 ("0.024000, 0.096000, 0.240000") ;
+          index_2 ("0.050000, 0.200000, 0.800000") ;
+          values ( \
+            "0.075822, 0.075873, 0.077902" \
+            "0.281044, 0.281046, 0.282202" \
+            "0.692903, 0.692901, 0.693265" \
+          ) ;
+        } /* end rise_transition */
+      } /* end timing */
+    } /* end pin */
+    pg_pin (IOVDD) {
+      voltage_name : IOVDD12 ;
+      pg_type : primary_power ;
+    } /* end pg_pin */
+    pg_pin (IOVSS) {
+      voltage_name : IOVSS ;
+      pg_type : primary_ground ;
+    } /* end pg_pin */
+    pg_pin (VDD) {
+      voltage_name : VDD ;
+      pg_type : primary_power ;
+    } /* end pg_pin */
+    pg_pin (VSS) {
+      voltage_name : VSS ;
+      pg_type : primary_ground ;
+    } /* end pg_pin */
+  } /* end cell */
+  cell (lvcmos_IOPadOut12) {
+    area : 14400 ;
+    pad_cell : true ;
+    pin (C2P) {
+      direction : input ;
+      related_power_pin : VDD;
+      related_ground_pin : VSS;
+      fall_capacitance : 0.011090 ;
+      fall_capacitance_range (0.011046, 0.011177);
+      rise_capacitance : 0.011065 ;
+      rise_capacitance_range (0.011055, 0.011077);
+      capacitance : 0.011077 ;
+    } /* end pin */
+    pin (PAD) {
+      direction : output ;
+      is_pad : true ;
+      related_power_pin : IOVDD;
+      related_ground_pin : IOVSS;
+      max_capacitance : 30 ;
+      function : C2P ;
+      timing () {
+        related_pin : C2P ;
+        timing_sense : positive_unate ;
+        timing_type : combinational ;
+        cell_fall (delay_template_3x3) {
+          index_1 ("5.000000, 12.000000, 30.000000") ;
+          index_2 ("0.050000, 0.200000, 0.800000") ;
+          values ( \
+            "0.346614, 0.364970, 0.389367" \
+            "0.504056, 0.522546, 0.546960" \
+            "0.902421, 0.923672, 0.949792" \
+          ) ;
+        } /* end cell_fall */
+        cell_rise (delay_template_3x3) {
+          index_1 ("5.000000, 12.000000, 30.000000") ;
+          index_2 ("0.050000, 0.200000, 0.800000") ;
+          values ( \
+            "0.416089, 0.437987, 0.484732" \
+            "0.569256, 0.591214, 0.638000" \
+            "0.962799, 0.986155, 1.032510" \
+          ) ;
+        } /* end cell_rise */
+        fall_transition (delay_template_3x3) {
+          index_1 ("5.000000, 12.000000, 30.000000") ;
+          index_2 ("0.050000, 0.200000, 0.800000") ;
+          values ( \
+            "0.460469, 0.460440, 0.460488" \
+            "0.944110, 0.944082, 0.944112" \
+            "2.193500, 2.193460, 2.193460" \
+          ) ;
+        } /* end fall_transition */
+        rise_transition (delay_template_3x3) {
+          index_1 ("5.000000, 12.000000, 30.000000") ;
+          index_2 ("0.050000, 0.200000, 0.800000") ;
+          values ( \
+            "0.450328, 0.450330, 0.450359" \
+            "0.924815, 0.924815, 0.924825" \
+            "2.152880, 2.152930, 2.152900" \
+          ) ;
+        } /* end rise_transition */
+      } /* end timing */
+    } /* end pin */
+    pg_pin (IOVDD) {
+      voltage_name : IOVDD12 ;
+      pg_type : primary_power ;
+    } /* end pg_pin */
+    pg_pin (IOVSS) {
+      voltage_name : IOVSS ;
+      pg_type : primary_ground ;
+    } /* end pg_pin */
+    pg_pin (VDD) {
+      voltage_name : VDD ;
+      pg_type : primary_power ;
+    } /* end pg_pin */
+    pg_pin (VSS) {
+      voltage_name : VSS ;
+      pg_type : primary_ground ;
+    } /* end pg_pin */
+  } /* end cell */
+  cell (lvcmos_IOPadIn18) {
+    area : 14400 ;
+    pad_cell : true ;
+    pin (PAD) {
+      direction : input ;
+      is_pad : true ;
+      related_power_pin : IOVDD;
+      related_ground_pin : IOVSS;
+      fall_capacitance : 1.360207 ;
+      fall_capacitance_range (1.35951, 1.36058);
+      rise_capacitance : 1.360277 ;
+      rise_capacitance_range (1.36012, 1.36055);
+      capacitance : 1.360242 ;
+    } /* end pin */
+    pin (P2C) {
+      direction : output ;
+      related_power_pin : VDD;
+      related_ground_pin : VSS;
+      max_capacitance : 0.240000 ;
+      function : "!PAD" ;
+      timing () {
+        related_pin : PAD ;
+        timing_sense : negative_unate ;
+        timing_type : combinational ;
+        cell_fall (delay_template_3x3) {
+          index_1 ("0.024000, 0.096000, 0.240000") ;
+          index_2 ("0.100000, 0.500000, 2.000000") ;
+          values ( \
+            "0.480710, 0.680127, 1.338830" \
+            "0.565862, 0.765328, 1.424410" \
+            "0.719662, 0.919172, 1.578370" \
+          ) ;
+        } /* end cell_fall */
+        cell_rise (delay_template_3x3) {
+          index_1 ("0.024000, 0.096000, 0.240000") ;
+          index_2 ("0.100000, 0.500000, 2.000000") ;
+          values ( \
+            "0.349311, 0.534316, 1.077820" \
+            "0.423467, 0.608496, 1.152620" \
+            "0.566626, 0.751703, 1.296100" \
+          ) ;
+        } /* end cell_rise */
+        fall_transition (delay_template_3x3) {
+          index_1 ("0.024000, 0.096000, 0.240000") ;
+          index_2 ("0.100000, 0.500000, 2.000000") ;
+          values ( \
+            "0.062433, 0.062457, 0.063489" \
+            "0.158777, 0.158794, 0.159445" \
+            "0.365391, 0.365370, 0.365654" \
+          ) ;
+        } /* end fall_transition */
+        rise_transition (delay_template_3x3) {
+          index_1 ("0.024000, 0.096000, 0.240000") ;
+          index_2 ("0.100000, 0.500000, 2.000000") ;
+          values ( \
+            "0.047505, 0.047674, 0.050570" \
+            "0.148926, 0.148983, 0.150206" \
+            "0.357560, 0.357584, 0.358280" \
+          ) ;
+        } /* end rise_transition */
+      } /* end timing */
+    } /* end pin */
+    pg_pin (IOVDD) {
+      voltage_name : IOVDD18 ;
+      pg_type : primary_power ;
+    } /* end pg_pin */
+    pg_pin (IOVSS) {
+      voltage_name : IOVSS ;
+      pg_type : primary_ground ;
+    } /* end pg_pin */
+    pg_pin (VDD) {
+      voltage_name : VDD ;
+      pg_type : primary_power ;
+    } /* end pg_pin */
+    pg_pin (VSS) {
+      voltage_name : VSS ;
+      pg_type : primary_ground ;
+    } /* end pg_pin */
+  } /* end cell */
+  cell (lvcmos_IOPadOut18) {
+    area : 14400 ;
+    pad_cell : true ;
+    pin (C2P) {
+      direction : input ;
+      related_power_pin : VDD;
+      related_ground_pin : VSS;
+      fall_capacitance : 0.015374 ;
+      fall_capacitance_range (0.015368, 0.015387);
+      rise_capacitance : 0.015345 ;
+      rise_capacitance_range (0.015306, 0.01537);
+      capacitance : 0.015359 ;
+    } /* end pin */
+    pin (PAD) {
+      direction : output ;
+      is_pad : true ;
+      related_power_pin : IOVDD;
+      related_ground_pin : IOVSS;
+      max_capacitance : 30 ;
+      function : C2P ;
+      timing () {
+        related_pin : C2P ;
+        timing_sense : positive_unate ;
+        timing_type : combinational ;
+        cell_fall (delay_template_3x3) {
+          index_1 ("5.000000, 12.000000, 30.000000") ;
+          index_2 ("0.050000, 0.200000, 0.800000") ;
+          values ( \
+            "1.193000, 1.217010, 1.251010" \
+            "1.425440, 1.451610, 1.485270" \
+            "2.001070, 2.030970, 2.067110" \
+          ) ;
+        } /* end cell_fall */
+        cell_rise (delay_template_3x3) {
+          index_1 ("5.000000, 12.000000, 30.000000") ;
+          index_2 ("0.050000, 0.200000, 0.800000") ;
+          values ( \
+            "1.184760, 1.244780, 1.486610" \
+            "1.412820, 1.468280, 1.711780" \
+            "1.988570, 2.042730, 2.290260" \
+          ) ;
+        } /* end cell_rise */
+        fall_transition (delay_template_3x3) {
+          index_1 ("5.000000, 12.000000, 30.000000") ;
+          index_2 ("0.050000, 0.200000, 0.800000") ;
+          values ( \
+            "0.617526, 0.617462, 0.617531" \
+            "1.213040, 1.213020, 1.213080" \
+            "2.770850, 2.770600, 2.770540" \
+          ) ;
+        } /* end fall_transition */
+        rise_transition (delay_template_3x3) {
+          index_1 ("5.000000, 12.000000, 30.000000") ;
+          index_2 ("0.050000, 0.200000, 0.800000") ;
+          values ( \
+            "0.622749, 0.622704, 0.622744" \
+            "1.234950, 1.235220, 1.235110" \
+            "2.839410, 2.839380, 2.839450" \
+          ) ;
+        } /* end rise_transition */
+      } /* end timing */
+    } /* end pin */
+    pg_pin (IOVDD) {
+      voltage_name : IOVDD18 ;
+      pg_type : primary_power ;
+    } /* end pg_pin */
+    pg_pin (IOVSS) {
+      voltage_name : IOVSS ;
+      pg_type : primary_ground ;
+    } /* end pg_pin */
+    pg_pin (VDD) {
+      voltage_name : VDD ;
+      pg_type : primary_power ;
+    } /* end pg_pin */
+    pg_pin (VSS) {
+      voltage_name : VSS ;
+      pg_type : primary_ground ;
+    } /* end pg_pin */
+  } /* end cell */
+  cell (lvcmos_IOPadIn18NH) {
+    area : 14400 ;
+    pad_cell : true ;
+    pin (PAD) {
+      direction : input ;
+      is_pad : true ;
+      related_power_pin : IOVDD;
+      related_ground_pin : IOVSS;
+      fall_capacitance : 1.355630 ;
+      fall_capacitance_range (1.35556, 1.35572);
+      rise_capacitance : 1.355203 ;
+      rise_capacitance_range (1.35509, 1.35528);
+      capacitance : 1.355417 ;
+    } /* end pin */
+    pin (P2C) {
+      direction : output ;
+      related_power_pin : VDD;
+      related_ground_pin : VSS;
+      max_capacitance : 0.240000 ;
+      function : "!PAD" ;
+      timing () {
+        related_pin : PAD ;
+        timing_sense : negative_unate ;
+        timing_type : combinational ;
+        cell_fall (delay_template_3x3) {
+          index_1 ("0.024000, 0.096000, 0.240000") ;
+          index_2 ("0.100000, 0.500000, 2.000000") ;
+          values ( \
+            "0.371191, 0.461950, 0.569218" \
+            "0.455762, 0.546514, 0.653798" \
+            "0.609377, 0.700091, 0.807350" \
+          ) ;
+        } /* end cell_fall */
+        cell_rise (delay_template_3x3) {
+          index_1 ("0.024000, 0.096000, 0.240000") ;
+          index_2 ("0.100000, 0.500000, 2.000000") ;
+          values ( \
+            "0.428284, 0.572524, 0.861046" \
+            "0.507196, 0.651481, 0.940232" \
+            "0.650152, 0.794493, 1.083250" \
+          ) ;
+        } /* end cell_rise */
+        fall_transition (delay_template_3x3) {
+          index_1 ("0.024000, 0.096000, 0.240000") ;
+          index_2 ("0.100000, 0.500000, 2.000000") ;
+          values ( \
+            "0.060905, 0.060907, 0.060980" \
+            "0.157573, 0.157571, 0.157610" \
+            "0.364762, 0.364838, 0.364749" \
+          ) ;
+        } /* end fall_transition */
+        rise_transition (delay_template_3x3) {
+          index_1 ("0.024000, 0.096000, 0.240000") ;
+          index_2 ("0.100000, 0.500000, 2.000000") ;
+          values ( \
+            "0.065151, 0.065351, 0.066123" \
+            "0.156591, 0.156655, 0.157011" \
+            "0.361510, 0.361529, 0.361623" \
+          ) ;
+        } /* end rise_transition */
+      } /* end timing */
+    } /* end pin */
+    pg_pin (IOVDD) {
+      voltage_name : IOVDD18 ;
+      pg_type : primary_power ;
+    } /* end pg_pin */
+    pg_pin (IOVSS) {
+      voltage_name : IOVSS ;
+      pg_type : primary_ground ;
+    } /* end pg_pin */
+    pg_pin (VDD) {
+      voltage_name : VDD ;
+      pg_type : primary_power ;
+    } /* end pg_pin */
+    pg_pin (VSS) {
+      voltage_name : VSS ;
+      pg_type : primary_ground ;
+    } /* end pg_pin */
+  } /* end cell */
+    cell (lvcmos_Filler200) {
+        area : 180;
+        dont_touch : true;
+        dont_use : true;
+        timing_model_type : abstracted;
+        pad_cell : true;
+        pg_pin (IOVSS) {
+            pg_type : primary_ground;
+            voltage_name : "IOVSS";
+        }
+        pg_pin (IOVDD) {
+            pg_type : primary_power;
+            voltage_name : "IOVDD";
+        }
+        pg_pin (VSS) {
+            pg_type : primary_ground;
+            voltage_name : "VSS";
+        }
+        pg_pin (VDD) {
+            pg_type : primary_power;
+            voltage_name : "VDD";
+        }
+    }
+    cell (lvcmos_Filler400) {
+        area : 360;
+        dont_touch : true;
+        dont_use : true;
+        timing_model_type : abstracted;
+        pad_cell : true;
+        pg_pin (IOVSS) {
+            pg_type : primary_ground;
+            voltage_name : "IOVSS";
+        }
+        pg_pin (IOVDD) {
+            pg_type : primary_power;
+            voltage_name : "IOVDD";
+        }
+        pg_pin (VSS) {
+            pg_type : primary_ground;
+            voltage_name : "VSS";
+        }
+        pg_pin (VDD) {
+            pg_type : primary_power;
+            voltage_name : "VDD";
+        }
+    }
+    cell (lvcmos_Filler1000) {
+        area : 900;
+        dont_touch : true;
+        dont_use : true;
+        timing_model_type : abstracted;
+        pad_cell : true;
+        pg_pin (IOVSS) {
+            pg_type : primary_ground;
+            voltage_name : "IOVSS";
+        }
+        pg_pin (IOVDD) {
+            pg_type : primary_power;
+            voltage_name : "IOVDD";
+        }
+        pg_pin (VSS) {
+            pg_type : primary_ground;
+            voltage_name : "VSS";
+        }
+        pg_pin (VDD) {
+            pg_type : primary_power;
+            voltage_name : "VDD";
+        }
+    }
+    cell (lvcmos_Filler2000) {
+        area : 1800;
+        dont_touch : true;
+        dont_use : true;
+        timing_model_type : abstracted;
+        pad_cell : true;
+        pg_pin (IOVSS) {
+            pg_type : primary_ground;
+            voltage_name : "IOVSS";
+        }
+        pg_pin (IOVDD) {
+            pg_type : primary_power;
+            voltage_name : "IOVDD";
+        }
+        pg_pin (VSS) {
+            pg_type : primary_ground;
+            voltage_name : "VSS";
+        }
+        pg_pin (VDD) {
+            pg_type : primary_power;
+            voltage_name : "VDD";
+        }
+    }
+    cell (lvcmos_Filler4000) {
+        area : 3600;
+        dont_touch : true;
+        dont_use : true;
+        timing_model_type : abstracted;
+        pad_cell : true;
+        pg_pin (IOVSS) {
+            pg_type : primary_ground;
+            voltage_name : "IOVSS";
+        }
+        pg_pin (IOVDD) {
+            pg_type : primary_power;
+            voltage_name : "IOVDD";
+        }
+        pg_pin (VSS) {
+            pg_type : primary_ground;
+            voltage_name : "VSS";
+        }
+        pg_pin (VDD) {
+            pg_type : primary_power;
+            voltage_name : "VDD";
+        }
+    }
+    cell (lvcmos_Filler10000) {
+        area : 9000;
+        dont_touch : true;
+        dont_use : true;
+        timing_model_type : abstracted;
+        pad_cell : true;
+        pg_pin (IOVSS) {
+            pg_type : primary_ground;
+            voltage_name : "IOVSS";
+        }
+        pg_pin (IOVDD) {
+            pg_type : primary_power;
+            voltage_name : "IOVDD";
+        }
+        pg_pin (VSS) {
+            pg_type : primary_ground;
+            voltage_name : "VSS";
+        }
+        pg_pin (VDD) {
+            pg_type : primary_power;
+            voltage_name : "VDD";
+        }
+    }
+    cell (lvcmos_Corner) {
+        area : 32400;
+        dont_touch : true;
+        dont_use : true;
+        timing_model_type : abstracted;
+        pad_cell : true;
+        pg_pin (IOVSS) {
+            pg_type : primary_ground;
+            voltage_name : "IOVSS";
+        }
+        pg_pin (IOVDD) {
+            pg_type : primary_power;
+            voltage_name : "IOVDD";
+        }
+        pg_pin (VSS) {
+            pg_type : primary_ground;
+            voltage_name : "VSS";
+        }
+        pg_pin (VDD) {
+            pg_type : primary_power;
+            voltage_name : "VDD";
+        }
+    }
+    cell (lvcmos_CornerStop) {
+        area : 32400;
+        dont_touch : true;
+        dont_use : true;
+        timing_model_type : abstracted;
+        pad_cell : true;
+        pin (IOVSS_A) {
+            direction : inout;
+            related_ground_pin : VSS;
+            related_power_pin : VDD;
+        }
+        pin (IOVDD_A) {
+            direction : inout;
+            related_ground_pin : VSS;
+            related_power_pin : VDD;
+        }
+        pg_pin (VSS) {
+            pg_type : primary_ground;
+            voltage_name : "VSS";
+        }
+        pg_pin (VDD) {
+            pg_type : primary_power;
+            voltage_name : "VDD";
+        }
+        pin (IOVSS_B) {
+            direction : inout;
+            related_ground_pin : VSS;
+            related_power_pin : VDD;
+        }
+        pin (IOVDD_B) {
+            direction : inout;
+            related_ground_pin : VSS;
+            related_power_pin : VDD;
+        }
+    }
+    cell (lvcmos_CornerBreaker) {
+        area : 32400;
+        dont_touch : true;
+        dont_use : true;
+        timing_model_type : abstracted;
+        pad_cell : true;
+        pg_pin (IOVSS_MIPI) {
+            pg_type : primary_ground;
+            voltage_name : "IOVSS_MIPI";
+        }
+        pg_pin (IOVDD_MIPI) {
+            pg_type : primary_power;
+            voltage_name : "IOVDD_MIPI";
+        }
+        pg_pin (VSS) {
+            pg_type : primary_ground;
+            voltage_name : "VSS";
+        }
+        pg_pin (VDD) {
+            pg_type : primary_power;
+            voltage_name : "VDD";
+        }
+        pg_pin (IOVSS) {
+            pg_type : primary_ground;
+            voltage_name : "IOVSS";
+        }
+        pg_pin (IOVDD) {
+            pg_type : primary_power;
+            voltage_name : "IOVDD33";
+        }
+    }
+    cell (lvcmos_IOPadIOVss) {
+        area : 14400;
+        dont_touch : true;
+        dont_use : true;
+        timing_model_type : abstracted;
+        pad_cell : true;
+        pg_pin (IOVSS) {
+            pg_type : primary_ground;
+            voltage_name : "IOVSS";
+            is_pad : true;
+        }
+        pg_pin (IOVDD) {
+            pg_type : primary_power;
+            voltage_name : "IOVDD";
+        }
+        pg_pin (VSS) {
+            pg_type : primary_ground;
+            voltage_name : "VSS";
+        }
+        pg_pin (VDD) {
+            pg_type : primary_power;
+            voltage_name : "VDD";
+        }
+    }
+    cell (lvcmos_IOPadVss) {
+        area : 14400;
+        dont_touch : true;
+        dont_use : true;
+        timing_model_type : abstracted;
+        pad_cell : true;
+        pg_pin (IOVSS) {
+            pg_type : primary_ground;
+            voltage_name : "IOVSS";
+        }
+        pg_pin (IOVDD) {
+            pg_type : primary_power;
+            voltage_name : "IOVDD";
+        }
+        pg_pin (VSS) {
+            pg_type : primary_ground;
+            voltage_name : "VSS";
+            is_pad : true;
+        }
+        pg_pin (VDD) {
+            pg_type : primary_power;
+            voltage_name : "VDD";
+        }
+    }
+    cell (lvcmos_IOPadIOVdd12) {
+        area : 14400;
+        dont_touch : true;
+        dont_use : true;
+        timing_model_type : abstracted;
+        pad_cell : true;
+        pg_pin (IOVSS) {
+            pg_type : primary_ground;
+            voltage_name : "IOVSS";
+        }
+        pg_pin (IOVDD) {
+            pg_type : primary_power;
+            voltage_name : "IOVDD12";
+            is_pad : true;
+        }
+        pg_pin (VSS) {
+            pg_type : primary_ground;
+            voltage_name : "VSS";
+        }
+        pg_pin (VDD) {
+            pg_type : primary_power;
+            voltage_name : "VDD";
+        }
+    }
+    cell (lvcmos_IOPadVdd12) {
+        area : 14400;
+        dont_touch : true;
+        dont_use : true;
+        timing_model_type : abstracted;
+        pad_cell : true;
+        pg_pin (IOVSS) {
+            pg_type : primary_ground;
+            voltage_name : "IOVSS";
+        }
+        pg_pin (IOVDD) {
+            pg_type : primary_power;
+            voltage_name : "IOVDD12";
+        }
+        pg_pin (VSS) {
+            pg_type : primary_ground;
+            voltage_name : "VSS";
+        }
+        pg_pin (VDD) {
+            pg_type : primary_power;
+            voltage_name : "VDD";
+            is_pad : true;
+        }
+    }
+    cell (lvcmos_IOPadIOVdd18) {
+        area : 14400;
+        dont_touch : true;
+        dont_use : true;
+        timing_model_type : abstracted;
+        pad_cell : true;
+        pg_pin (IOVSS) {
+            pg_type : primary_ground;
+            voltage_name : "IOVSS";
+        }
+        pg_pin (IOVDD) {
+            pg_type : primary_power;
+            voltage_name : "IOVDD18";
+            is_pad : true;
+        }
+        pg_pin (VSS) {
+            pg_type : primary_ground;
+            voltage_name : "VSS";
+        }
+        pg_pin (VDD) {
+            pg_type : primary_power;
+            voltage_name : "VDD";
+        }
+    }
+} /* end library */
