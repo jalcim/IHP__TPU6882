@@ -15,8 +15,7 @@
   "top_cell_name": "puce3_IOPadIn18_noninv",
   "release": {
     "version": "v.1.0.0",
-    "gds": "release/v.1.0.0/gds",
-    "netlist": "release/v.1.0.0/netlist",
+    "gds": "release/v.1.0.0/gds/puce3_IOPadIn18_noninv.gds",
     "doc": "release/v.1.0.0/doc"
   }
 }

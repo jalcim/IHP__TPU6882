@@ -15,8 +15,7 @@
   "top_cell_name": "logo_nebula",
   "release": {
     "version": "v.1.0.0",
-    "gds": "release/v.1.0.0/gds",
-    "netlist": "release/v.1.0.0/netlist",
+    "gds": "release/v.1.0.0/gds/logo_nebula.gds",
     "doc": "release/v.1.0.0/doc"
   }
 }

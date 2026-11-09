@@ -80,8 +80,7 @@
   "top_cell_name": "coeur_v2",
   "release": {
     "version": "v.1.0.0",
-    "gds": "release/v.1.0.0/gds",
-    "netlist": "release/v.1.0.0/netlist",
+    "gds": "release/v.1.0.0/gds/coeur_v2.gds",
     "doc": "release/v.1.0.0/doc"
   }
 }

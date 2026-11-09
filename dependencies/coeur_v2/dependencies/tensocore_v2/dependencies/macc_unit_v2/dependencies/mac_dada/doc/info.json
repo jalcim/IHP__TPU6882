@@ -15,8 +15,7 @@
   "top_cell_name": "mac_dada",
   "release": {
     "version": "v.1.0.0",
-    "gds": "release/v.1.0.0/gds",
-    "netlist": "release/v.1.0.0/netlist",
+    "gds": "release/v.1.0.0/gds/mac_dada.gds",
     "doc": "release/v.1.0.0/doc"
   }
 }

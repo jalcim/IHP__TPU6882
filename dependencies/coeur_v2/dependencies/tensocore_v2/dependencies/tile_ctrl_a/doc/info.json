@@ -15,8 +15,7 @@
   "top_cell_name": "tile_ctrl_a",
   "release": {
     "version": "v.1.0.0",
-    "gds": "release/v.1.0.0/gds",
-    "netlist": "release/v.1.0.0/netlist",
+    "gds": "release/v.1.0.0/gds/tile_ctrl_a.gds",
     "doc": "release/v.1.0.0/doc"
   }
 }

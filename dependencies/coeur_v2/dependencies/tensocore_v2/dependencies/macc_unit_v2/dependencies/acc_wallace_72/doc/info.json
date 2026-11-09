@@ -15,8 +15,7 @@
   "top_cell_name": "acc_wallace_72",
   "release": {
     "version": "v.1.0.0",
-    "gds": "release/v.1.0.0/gds",
-    "netlist": "release/v.1.0.0/netlist",
+    "gds": "release/v.1.0.0/gds/acc_wallace_72.gds",
     "doc": "release/v.1.0.0/doc"
   }
 }

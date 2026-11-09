@@ -15,8 +15,7 @@
   "top_cell_name": "pix_asm_wind_16_v2",
   "release": {
     "version": "v.1.0.0",
-    "gds": "release/v.1.0.0/gds",
-    "netlist": "release/v.1.0.0/netlist",
+    "gds": "release/v.1.0.0/gds/pix_asm_wind_16_v2.gds",
     "doc": "release/v.1.0.0/doc"
   }
 }

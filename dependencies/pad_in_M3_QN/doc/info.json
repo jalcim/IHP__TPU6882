@@ -15,8 +15,7 @@
   "top_cell_name": "pad_in_M3_QN",
   "release": {
     "version": "v.1.0.0",
-    "gds": "release/v.1.0.0/gds",
-    "netlist": "release/v.1.0.0/netlist",
+    "gds": "release/v.1.0.0/gds/pad_in_M3_QN.gds",
     "doc": "release/v.1.0.0/doc"
   }
 }

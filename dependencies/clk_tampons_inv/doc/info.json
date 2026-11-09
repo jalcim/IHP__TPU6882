@@ -15,8 +15,7 @@
   "top_cell_name": "clk_tampons_inv",
   "release": {
     "version": "v.1.0.0",
-    "gds": "release/v.1.0.0/gds",
-    "netlist": "release/v.1.0.0/netlist",
+    "gds": "release/v.1.0.0/gds/clk_tampons_inv.gds",
     "doc": "release/v.1.0.0/doc"
   }
 }

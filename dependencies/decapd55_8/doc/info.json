@@ -15,8 +15,7 @@
   "top_cell_name": "decapd55_8",
   "release": {
     "version": "v.1.0.0",
-    "gds": "release/v.1.0.0/gds",
-    "netlist": "release/v.1.0.0/netlist",
+    "gds": "release/v.1.0.0/gds/decapd55_8.gds",
     "doc": "release/v.1.0.0/doc"
   }
 }
