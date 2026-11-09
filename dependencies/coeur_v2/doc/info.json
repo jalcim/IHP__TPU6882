@@ -10,7 +10,72 @@
   "repository": "",
   "pdk_version": "7bbb4b5a5b64c446fedc64eacadc33fa65ade276",
   "process": "SG13CMOS5L",
-  "dependencies": {},
+  "dependencies": {
+    "tensocore_v2": {
+      "dependencies": {
+        "macc_unit_v2": {
+          "dependencies": {
+            "mac_dada": {
+              "dependencies": {}
+            },
+            "acc_wallace_72": {
+              "dependencies": {}
+            },
+            "acc_csa": {
+              "dependencies": {}
+            },
+            "ACC_BARREL_6x19": {
+              "dependencies": {}
+            },
+            "HEAD_6x19_EST": {
+              "dependencies": {}
+            },
+            "acc_ring_zig_19x6x10": {
+              "dependencies": {}
+            }
+          }
+        },
+        "weight_filter_816_0": {
+          "dependencies": {}
+        },
+        "thr_rot_816_64x27": {
+          "dependencies": {}
+        },
+        "tile_ctrl_a": {
+          "dependencies": {}
+        },
+        "phase_gen_ip": {
+          "dependencies": {}
+        }
+      }
+    },
+    "link_v2": {
+      "dependencies": {
+        "pix_asm_wind_16_v2": {
+          "dependencies": {}
+        },
+        "phase_gen_ip": {
+          "dependencies": {}
+        }
+      }
+    },
+    "controle_v2": {
+      "dependencies": {
+        "tile_ctrl_b_buf": {
+          "dependencies": {}
+        },
+        "dbi_group": {
+          "dependencies": {}
+        },
+        "pad_core_valid": {
+          "dependencies": {}
+        },
+        "phase_gen_ip": {
+          "dependencies": {}
+        }
+      }
+    }
+  },
   "tools": {},
   "top_cell_name": "coeur_v2",
   "release": {
