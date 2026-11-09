@@ -1,4 +1,4 @@
-// TPU6882 : top de la puce 8-1-6 W64 v2, u_tile = coeur v2 + 37 pad_in.
+// TPU6882: structural top level (pad ring, pad_in_M3 input stages, clk_tampons clock buffers, coeur_v2 core).
 `define TILE_W 64
 `define TILE_BPP 2
 `define TILE_OUT_W 8
