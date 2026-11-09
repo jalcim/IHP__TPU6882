@@ -522,7 +522,7 @@ XXI1N XL2N/G IOVSS C2P IOVSS sg13_lv_nmos_6Q9JUV
 V0 IOVSS VSS 0.0
 .ends
 
-.subckt sg13cmos5l_SecondaryProtection iovdd iovss core pad
+.subckt lvcmosIO_SecondaryProtection iovdd iovss core pad
 X0 core iovdd dpantenna l=0.64u w=4.98u
 X1 core pad iovss rppd l=2u w=1u
 X2 iovss core dantenna l=3.1u w=0.64u
@@ -537,7 +537,7 @@ X0 S G D w_n143_n162# sg13_lv_pmos ad=0.34p pd=2.68u as=0.34p ps=2.68u w=1u l=0.
 .ends
 
 .subckt lvcmos_IOPadIn12 IOVSS IOVDD VSS VDD PAD P2C
-Xsg13cmos5l_SecondaryProtection_0 IOVDD IOVSS XM4/G PAD sg13cmos5l_SecondaryProtection
+Xsg13cmos5l_SecondaryProtection_0 IOVDD IOVSS XM4/G PAD lvcmosIO_SecondaryProtection
 XXDCN IOVSS PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD
 + PAD PAD PAD PAD IOVSS IOVSS IOVSS IOVSS IOVSS IOVSS IOVSS IOVSS IOVSS IOVSS dantenna_L8J2F9
 XXDCP IOVDD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD
@@ -879,7 +879,7 @@ X0 S G D w_n237_n224# sg13_hv_pmos ad=0.34p pd=2.68u as=0.34p ps=2.68u w=1u l=0.
 .ends
 
 .subckt lvcmos_IOPadIn18 IOVSS IOVDD VSS VDD PAD P2C
-Xsg13cmos5l_SecondaryProtection_0 IOVDD IOVSS XM4/G PAD sg13cmos5l_SecondaryProtection
+Xsg13cmos5l_SecondaryProtection_0 IOVDD IOVSS XM4/G PAD lvcmosIO_SecondaryProtection
 XXDCN IOVSS PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD
 + PAD PAD PAD PAD IOVSS IOVSS IOVSS IOVSS IOVSS IOVSS IOVSS IOVSS IOVSS IOVSS dantenna_L8J2F9
 XXDCP IOVDD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD
@@ -915,7 +915,7 @@ X0 S G D sub sg13_hv_nmos ad=0.442p pd=3.28u as=0.442p ps=3.28u w=1.3u l=0.45u
 .ends
 
 .subckt lvcmos_IOPadIn18NH IOVSS IOVDD VSS VDD PAD P2C
-Xsg13cmos5l_SecondaryProtection_0 IOVDD IOVSS XP3/G PAD sg13cmos5l_SecondaryProtection
+Xsg13cmos5l_SecondaryProtection_0 IOVDD IOVSS XP3/G PAD lvcmosIO_SecondaryProtection
 XXDCN IOVSS PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD
 + PAD PAD PAD PAD IOVSS IOVSS IOVSS IOVSS IOVSS IOVSS IOVSS IOVSS IOVSS IOVSS dantenna_L8J2F9
 XXP0 VDD VDD VDD VDD sg13_hv_pmos_7F7J8Y

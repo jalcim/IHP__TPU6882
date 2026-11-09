@@ -1,12 +1,12 @@
 IHP minimum DRC precheck of the released GDS
 
 GDS: release/v.1.0.0/gds/TPU6882.gds.gz, top cell TPU6882
-SHA-256 of TPU6882.gds: 7506ccd5283194f7b1a4b83d4e8a23e7200f4778f07409857c7fd61bf05518d0
-SHA-256 of TPU6882.gds.gz: 33d4213f4a1672ee59903bc8e849ed58a1056f8a1822775e194727f5abc9b9ed
+SHA-256 of TPU6882.gds: 6f2e6ec16ad4588549ae439cb19d617e4e515fa3ac0ac9238fc4e5c2ecfe3264
+SHA-256 of TPU6882.gds.gz: 755fc8b2503785b75ce7bb0af0e09fa7b64f0d235700bf23a7672491019649d1
 PDK: IHP-Open-PDK, ihp-sg13cmos5l, revision 7bbb4b5a5b64c446fedc64eacadc33fa65ade276 (DRC deck files identical to that revision)
 KLayout: 0.30.12
 Command: run_drc.py --path=TPU6882.gds --topcell=TPU6882 --minimum_drc --mp=3
 Checks: main and density
 Result: 0 violations (KLayout DRC Check Passed), 0 items in TPU6882_minimum_drc.lyrdb
-Run time: 192.76 s
+Run time: 189.75 s
 Logs: TPU6882_drc_run.log (run summary), TPU6882_TPU6882_density.log (density checks)

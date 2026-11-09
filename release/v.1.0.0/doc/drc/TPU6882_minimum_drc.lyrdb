@@ -20,6 +20,12 @@
    </categories>
   </category>
  <category>
+   <name>AFil.c1</name>
+   <description>5.6. AFil.c1 Min. Activ:filler space to Activ is 0.42 um</description>
+   <categories>
+   </categories>
+  </category>
+ <category>
    <name>Act.a</name>
    <description>5.5. Act.a : Min. Activ width : 0.15 µm</description>
    <categories>
@@ -28,12 +34,6 @@
   <category>
    <name>Act.b</name>
    <description>5.5. Act.b : Min. Activ (drawing + filler) space or notch: 0.21 µm.</description>
-   <categories>
-   </categories>
-  </category>
- <category>
-   <name>AFil.c1</name>
-   <description>5.6. AFil.c1 Min. Activ:filler space to Activ is 0.42 um</description>
    <categories>
    </categories>
   </category>
@@ -260,6 +260,18 @@
    </categories>
   </category>
  <category>
+   <name>Seal.l</name>
+   <description>6.10. Seal.l : No structures outside sealring boundary allowed</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>Seal.n</name>
+   <description>6.10. seal.n : Sealring must be enclosed by an unbroken Passiv ring</description>
+   <categories>
+   </categories>
+  </category>
+ <category>
    <name>forbidden.biwind</name>
    <description>forbidden.biwind : 3.2. biwind is forbidden in designs submitted for all 0.13 um techs.</description>
    <categories>
@@ -382,18 +394,6 @@
   <category>
    <name>CMOS5L.FORB.Vmim</name>
    <description>CMOS5L.FORB.Vmim : 3.2. Vmim layer is prohibited in CMOS5L (M1-M4-TM1 stack).</description>
-   <categories>
-   </categories>
-  </category>
- <category>
-   <name>Seal.l</name>
-   <description>6.10. Seal.l : No structures outside sealring boundary allowed</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>Seal.n</name>
-   <description>6.10. seal.n : Sealring must be enclosed by an unbroken Passiv ring</description>
    <categories>
    </categories>
   </category>
